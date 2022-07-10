@@ -11,7 +11,7 @@ import entities.Arq;
 
 public class logicalExpressionParser {
 	//before reading this code, please take a look at the template.v file,
-	//since that's the model we will be following to the testbench.
+	//since that's the model we will be following for the testbench.
 	/*
 	 * if the values on the logical expression
 	 * are letters, count as 1+ variable, by doing
