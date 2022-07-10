@@ -10,16 +10,18 @@ so, the following input
 >a & b
 
 should produce the following output:
->    a &emsp; b = &nbsp; wire_a 
->    x &emsp; x = &nbsp;  x
->    0 &emsp; 0 = &nbsp;  0
->    0 &emsp; 1 = &nbsp;  0
->    1 &emsp; 1 = &nbsp;  1
->    1 &emsp; 0 = &nbsp;  0
+>
+    a    b =    wire_a 
+    x    x =    x
+    0    0 =    0
+    0    1 =    0
+    1    1 =    1
+    1    0 =    0
+>
 ---
 ## Compiling and building
 #### to compile the java file
-beware that the [package entities](https://github.com/Felipefams/verilog_parser/tree/main/main) and `logicalExpressionParser.java` **must** be in the same folder <br>
+beware that the [package entities](https://github.com/Felipefams/verilog_parser/tree/main/main) and the `logicalExpressionParser.java` **must** be in the same folder <br>
 that being said, the main file is compiled as any normal java program:
 > javac logicalExpressionParser.java
 
@@ -36,4 +38,3 @@ and executed as:
 
 or
 >./file.vvp
----
