@@ -10,34 +10,8 @@ import java.util.StringTokenizer;
 import entities.Arq;
 
 public class logicalExpressionParser {
-	/*
-	 * Example code in verilog
-	 * 
-	 * module f ( output s,input x,input y, input z );
-	 * assign s =(~(~x | ~y) & ~(x & y)) | ( ~((y & z) | ~x));
-	 * endmodule // f
-	 * module test_f;
-	 * reg x;
-	 * reg y;
-	 * reg z;
-	 * wire a;
-	 * f modulo ( a, x, y, z);
-	 * initial
-	 * begin : main
-	 * $display("Test module");
-	 * $display("   x    y    z =   r1   r2");
-	 * $monitor("%4b %4b %4b = %4b ", x, y, z, a);
-	 * #1 x=1'b0; y=1'b0; z=1'b0;
-	 * #1 x=1'b0; y=1'b0; z=1'b1;
-	 * #1 x=1'b0; y=1'b1; z=1'b0;
-	 * #1 x=1'b0; y=1'b1; z=1'b1;
-	 * #1 x=1'b1; y=1'b0; z=1'b0;
-	 * #1 x=1'b1; y=1'b0; z=1'b1;
-	 * #1 x=1'b1; y=1'b1; z=1'b0;
-	 * #1 x=1'b1; y=1'b1; z=1'b1;
-	 * end
-	 * endmodule // test_f5
-	 */
+	//before reading this code, please take a look at the template.v file,
+	//since that's the model we will be following to the testbench.
 	/*
 	 * if the values on the logical expression
 	 * are letters, count as 1+ variable, by doing
@@ -142,7 +116,6 @@ public class logicalExpressionParser {
 		for(int i = 0; i < charList.size(); i++){
 			sb.append("%4b ");
 		}
-		// sb.append("\");");
 		return sb.toString();
 	}
 
@@ -179,14 +152,7 @@ public class logicalExpressionParser {
 		String testDisplay = generateDisplay(list);
 
 		String final_Result = module + testModule + "initial\nbegin : main\n$display(\"test module\");\n" + testDisplay + "\n" + testMonitor + "\n" + testCases + "end\nendmodule //test";
-		Arq.openWriteClose(filename, final_Result);
-		// try{
-		// 	Runtime.getRuntime().exec(new String[] {"iverilog -o " + filename + "vp " + filename});
-		// 	Runtime.getRuntime().exec(new String[]{"vvp " + filename + "vp"});
-		// }catch(Exception e){
-		// 	System.out.println("You did something wrong");
-		// 	e.printStackTrace();
-		// }
+		Arq.openWriteClose(filename, final_Result); // write to file
 	}
 
 	// class for I/O
