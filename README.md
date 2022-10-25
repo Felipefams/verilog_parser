@@ -29,7 +29,7 @@ and executed using:
 >java logicalExpressionParser
 #### to compile the verilog file
 
-this project was tested using [Icarus Verilog](http://iverilog.icarus.com) compiler. and, in case you are also using icarus, should be compiled as following:
+this project was tested using [Icarus Verilog](http://iverilog.icarus.com) compiler. and, in case you are also using icarus, it should be compiled as following:
 
 > iverilog file.v -o file.vvp
 
